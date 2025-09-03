@@ -1,259 +1,193 @@
-📱 Service Providing App – Development Plan (Python + React.js/HTML-CSS)
+📱 Service Providing App – Development Plan (Final: Django + React.js)
 ✅ Objective
 
-To develop a web application that connects users with nearby service providers (home services, vehicle maintenance, salons, doctors, etc.) and includes:
-
-Barcode-linked vehicle contact
-
-Vendor promotions (Great Deal)
-
-Easy service provider registration
-
-Paid promotions for service providers
-
-SOS roadside assistance (car pulling/repair help)
+Develop a scalable service marketplace app connecting users with service providers across categories (home, vehicle, salon, doctors), with features like vehicle barcodes, SOS roadside help, vendor promotions, deals, and admin approval system.
 
 🧩 Key Features
 
-👤 User Login
+Google Login (Firebase / Django AllAuth)
 
-Login via Google Authentication
+Service Categories (Home, Car/Bike, Washing, Salon, Doctors, Appliances)
 
-🗂️ Main Service Categories
+Barcode System (vehicle-linked QR → owner contact, SOS help)
 
-Home Services (Plumbing, Electrical, Carpentry, etc.)
+Great Deals Section (vendor promotions visible to all)
 
-Nearby Services (location-based discovery)
+Service Provider Registration (form + admin approval)
 
-Car Service Center
+Paid Promotions (monthly subscription for vendors)
 
-Bike Service Center
+SOS Requests (roadside pulling/repair help system)
 
-Car Washing Center
+Admin Panel (manage users, vendors, deals, SOS)
 
-Bike Washing Center
+🚀 End-to-End Development Plan
+📌 Phase 1: Environment Setup
 
-Car Pulling / Roadside Assistance 🚗⚡
+Tech Stack:
 
-Salon Services
+Backend: Django + Django REST Framework
 
-Doctor Appointment Booking
+Frontend: React.js (or HTML/CSS/JS)
 
-Home Appliance Repair
+Database: PostgreSQL (preferred)
 
-🧾 Barcode Feature
+Auth: Firebase / Django AllAuth (Google OAuth)
 
-Each vehicle linked to a unique QR/barcode
+Hosting: AWS EC2 / Render (backend), Netlify / Vercel (frontend), RDS (DB)
 
-Scan barcode → fetch vehicle owner contact & send pre-listed notifications
+Repos:
 
-Users can order a custom vehicle barcode
+tellme-backend (Django APIs + Admin)
 
-💥 Great Deal (Vendor Promotion)
+tellme-frontend (React.js UI)
 
-Vendors/Users can post promotions (image, title, description, contact)
-
-Visible to all users under "Great Deal"
-
-🧑‍🔧 Service Provider Registration
-
-Registration form (business name, category, location, contact, service description, ID proof, logo)
-
-Admin approval required
-
-After approval → providers appear in Nearby Services & can promote in Great Deal
-
-💰 Paid Promotions
-
-Service providers subscribe monthly to promote deals/products/services
-
-🚨 SOS Requests (Car Pulling/Repair Help)
-
-User sends SOS request → nearby vendors get notified
-
-Vendors can accept & assist
-
-🚀 End-to-End Project Plan (Django + React.js)
-📌 Phase 1: Project Setup
-
-Tools Required
-
-Python 3.12+
-
-Django + Django REST Framework
-
-PostgreSQL / MySQL
-
-Node.js + npm (for React frontend)
-
-Git, Docker (optional), Postman
-
-Repositories
-
-service-app-backend (Django + DRF)
-
-service-app-frontend (React.js or HTML/CSS)
-
-📌 Phase 2: Folder Structure
+📌 Phase 2: Project Structure
 
 Backend (Django + DRF)
 
-service-app-backend/
- ┣ service_app/        # Django project configs
- ┣ users/              # Authentication, profiles
- ┣ services/           # Service providers, categories
- ┣ deals/              # Promotions
- ┣ bookings/           # Appointments
- ┣ sos/                # Car pulling/repair requests
- ┣ barcodes/           # Vehicle QR/barcode
+tellme-backend/
+ ┣ apps/
+ ┃ ┣ users/         # User profiles, roles, auth
+ ┃ ┣ services/      # Service categories, bookings
+ ┃ ┣ deals/         # Promotions & vendor posts
+ ┃ ┣ barcodes/      # Vehicle barcode management
+ ┃ ┣ sos/           # Roadside SOS requests
+ ┣ config/
+ ┃ ┣ settings.py    # DB, env, JWT/Google Auth
+ ┃ ┗ urls.py        # Main routing
+ ┣ manage.py
  ┗ requirements.txt
 
 
 Frontend (React.js)
 
-service-app-frontend/
+tellme-frontend/
  ┣ src/
- ┃ ┣ components/   # Reusable UI
- ┃ ┣ pages/        # Home, Services, Deals
- ┃ ┣ services/     # API calls
- ┃ ┣ context/      # Auth, global state
+ ┃ ┣ components/   # Reusable UI elements
+ ┃ ┣ pages/        # Home, Services, Deals, SOS
+ ┃ ┣ services/     # API calls via Axios
+ ┃ ┣ context/      # Auth & global state
+ ┃ ┣ assets/       # Images/icons
  ┃ ┗ App.js
+ ┣ public/
  ┗ package.json
 
-📌 Phase 3: Database Design (PostgreSQL Example)
+📌 Phase 3: Database Schema
 
-Users
+Users → id, name, email, phone, role(user/vendor/admin), google_id, profile_image
+Services → id, category, sub_category, vendor_id, description, location, contact
+Barcodes → id, vehicle_id, user_id, barcode_number, status
+Deals → id, user_id, title, description, image_url, contact_number, is_paid
+Bookings → id, user_id, service_id, status (pending/confirmed/completed)
+SOS Requests → id, user_id, vehicle_id, location, type(pull/repair), status
 
-id, name, email, phone, role(user/vendor/admin), google_auth_id, profile_image
+📌 Phase 4: API Endpoints
 
-Service Providers
-
-id, business_name, category_id, location, contact, description, id_proof, logo, status
-
-Service Categories
-
-id, name, description
-
-Barcodes
-
-id, vehicle_id, user_id, barcode_number, status
-
-Deals (Promotions)
-
-id, provider_id, title, description, picture_url, contact, active_from, active_to
-
-Bookings
-
-id, user_id, service_id, status
-
-SOS Requests
-
-id, user_id, vehicle_id, location, type (pull/repair), status
-
-📌 Phase 4: API Design (Django REST Framework)
+Base URL: /api/v1/
 
 Auth
 
-POST /api/auth/google/ – Google login
+POST /auth/google/ → Google login
 
-GET /api/auth/me/ – User profile
+GET /auth/me/ → Fetch profile
 
 Users
 
-PUT /api/users/:id/ – Update profile
+GET /users/:id/ → Get details
 
-GET /api/users/:id/ – User details
+PUT /users/:id/ → Update
 
 Service Providers
 
-POST /api/providers/register/ – Register vendor
+POST /service/register/ → Vendor registration
 
-GET /api/providers/nearby/ – Nearby vendors
+GET /service/categories/ → List categories
+
+GET /service/nearby/ → Nearby services
 
 Barcodes
 
-POST /api/barcodes/order/ – Order barcode
+POST /barcode/order/ → Order barcode
 
-GET /api/barcodes/:id/scan/ – Scan barcode
+GET /barcode/:code/ → Scan barcode
 
 Deals
 
-POST /api/deals/ – Create promotion
+POST /deals/ → Create promotion
 
-GET /api/deals/ – List all deals
+GET /deals/ → List all deals
 
-Bookings
+SOS
 
-POST /api/bookings/ – Create booking
+POST /sos/request/ → Request help
 
-GET /api/bookings/ – User bookings
+GET /sos/nearby/ → Nearby SOS requests
 
-SOS Requests
+📌 Phase 5: Frontend (React.js)
 
-POST /api/sos/request/ – Send SOS help request
+Pages:
 
-GET /api/sos/nearby/ – Vendors fetch nearby requests
+Login (Google Auth)
 
-📌 Phase 5: Frontend Development
-
-Pages
-
-Login (Google login integration)
-
-Home Dashboard (Categories, Nearby Services)
+Dashboard (categories + navigation)
 
 Service Provider Registration
 
-Barcode (Order + Scan with QR reader)
+Barcode (order + scanner)
 
-Great Deals (List + Create Promotion)
+Deals (post/view)
 
-SOS (Request Help + Nearby Requests)
+SOS Help
 
-Libraries (React.js)
+Libraries:
 
-Auth: Firebase Auth (Google login)
+Auth → Firebase SDK / react-firebase-hooks
 
-API Calls: Axios
+API → Axios
 
-State: Redux / Context API
+State → Redux Toolkit / Context API
 
-Maps: Google Maps API or Leaflet.js
+Maps → Google Maps API / Leaflet.js
 
-Barcode/QR: react-qr-scanner
+QR → react-qr-scanner / jsbarcode
 
-📌 Phase 6: Deployment Strategy
+📌 Phase 6: Deployment
 
-Backend (Django API)
+Backend (Django) → AWS EC2 / Render + Gunicorn + Nginx
 
-Host on AWS EC2 / DigitalOcean
+Database → PostgreSQL (AWS RDS / CloudSQL)
 
-DB on AWS RDS / PostgreSQL
+Frontend (React) → Netlify / Vercel
 
-Dockerize app (Gunicorn + Nginx)
+Media Storage → AWS S3 / Cloudinary
 
-Frontend (React.js)
+CI/CD → GitHub Actions (tests + auto-deploy)
 
-Build using npm run build
+Testing → Pytest (backend), Jest + RTL (frontend)
 
-Host on Vercel / Netlify / AWS S3 + CloudFront
+📌 Phase 7: Roles & Responsibilities
 
-CI/CD
+Backend Developer (Django – Fresher/Senior)
 
-GitHub Actions → auto deploy to server
+Build DRF APIs, DB models
 
-Unit Tests: Django (pytest) + React (Jest)
+Setup Google Auth, barcode, SOS APIs
 
-📌 Phase 7: Usage Flow
+Customize Django Admin (vendors, deals, SOS)
 
-User logs in via Google → lands on Home.
+Frontend Developer (React.js – Fresher)
 
-Browse categories or find nearby services.
+Build UI pages & integrate APIs
 
-Book service OR request SOS help.
+Implement barcode scanner, maps, deals UI
 
-Order barcode → attach to vehicle → others can scan & contact.
+DevOps Engineer (Senior)
 
-Vendors register, wait for approval, then appear in Nearby Services.
+Setup cloud infra, scaling, CI/CD pipelines
 
-Vendors can also promote deals in "Great Deal" (paid/monthly).
+QA Tester
+
+API testing (Postman)
+
+UI flow testing (manual + automation)
