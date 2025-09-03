@@ -1,202 +1,259 @@
-# 📱 TellMe – Service Providing App
+📱 Service Providing App – Development Plan (Python + React.js/HTML-CSS)
+✅ Objective
 
-## ✅ Objective
-To develop a mobile application that connects users with nearby service providers across various categories like home services, vehicle maintenance, salons, and doctors. It also includes features like barcode-linked vehicle contact, vendor promotions, and easy registration for service providers.
+To develop a web application that connects users with nearby service providers (home services, vehicle maintenance, salons, doctors, etc.) and includes:
 
----
+Barcode-linked vehicle contact
 
-## 🧩 Key Features
+Vendor promotions (Great Deal)
 
-### 👤 User Login
-- Login via Google Authentication for quick and secure access.
+Easy service provider registration
 
-### 🗂️ Main Service Categories
-- Home Services – Plumbing, Electrical, Carpentry, etc.
-- Nearby Services – Location-based discovery.
-- Car Service Center
-- Bike Service Center
-- Car Washing Center
-- Bike Washing Center
-- Car Pulling / Roadside Assistance Service 🚗⚡
-- Salon Services
-- Doctor Appointment Booking
-- Home Appliance Repair – AC, Refrigerator, Washing Machine, etc.
+Paid promotions for service providers
 
-### 🧾 Barcode Feature
-- Each vehicle can be linked with a unique barcode.
-- On scanning the barcode:
-  - Users can contact the vehicle owner.
-  - Send pre-listed notifications (Inquiry, Emergency Help, Offers).
-- Users can order a custom barcode for their vehicle from the app.
+SOS roadside assistance (car pulling/repair help)
 
-### 💥 Great Deal – Vendor Promotion (In User App)
-- Vendors/Users can post their products or services for sale or promotion.
-- Includes:
-  - Picture
-  - Product/Service Name
-  - Description
-  - Contact Details
-- Displayed under a section called **Great Deal** visible to all users.
+🧩 Key Features
 
-### 🧑‍🔧 Service Provider Registration
-- Service providers can register through the app using a simple form.
-- **Details Collected:**
-  - Business/Provider Name
-  - Category of Service (e.g., Car Wash, Salon, Plumbing)
-  - Location (via map or manual input)
-  - Contact Number
-  - Service Description
-  - Upload ID Proof / Business License
-  - Upload Profile Image or Logo
-- **Status:**
-  - Admin approval required before services go live.
-  - After Approval:
-    - Can receive customer bookings
-    - Appear in Nearby Services based on location
-    - Can promote deals in Great Deal section
+👤 User Login
 
-### 💰 Paid Promotions for Service Providers
-- Service providers can subscribe to a monthly plan to promote their services.
-- Promotion Post Includes:
-  - Image
-  - Product/Service Name
-  - Description
-  - Contact Number
-- Visible to all users in the **Great Deal** section.
+Login via Google Authentication
 
----
+🗂️ Main Service Categories
 
-## 🚀 End-to-End Project Plan – (React.js + Node.js)
+Home Services (Plumbing, Electrical, Carpentry, etc.)
 
-### 📌 Phase 1: Project Setup
-1. **Environment Setup**
-   - Install: Node.js, npm/yarn, VSCode, Git, Postman, MongoDB/MySQL, Docker (optional).
-   - Repositories:
-     - `service-app-backend` (Node.js + Express)
-     - `service-app-frontend` (React.js)
+Nearby Services (location-based discovery)
 
-2. **Project Structure**
+Car Service Center
 
-**Backend (Node.js + Express)**
-```
+Bike Service Center
+
+Car Washing Center
+
+Bike Washing Center
+
+Car Pulling / Roadside Assistance 🚗⚡
+
+Salon Services
+
+Doctor Appointment Booking
+
+Home Appliance Repair
+
+🧾 Barcode Feature
+
+Each vehicle linked to a unique QR/barcode
+
+Scan barcode → fetch vehicle owner contact & send pre-listed notifications
+
+Users can order a custom vehicle barcode
+
+💥 Great Deal (Vendor Promotion)
+
+Vendors/Users can post promotions (image, title, description, contact)
+
+Visible to all users under "Great Deal"
+
+🧑‍🔧 Service Provider Registration
+
+Registration form (business name, category, location, contact, service description, ID proof, logo)
+
+Admin approval required
+
+After approval → providers appear in Nearby Services & can promote in Great Deal
+
+💰 Paid Promotions
+
+Service providers subscribe monthly to promote deals/products/services
+
+🚨 SOS Requests (Car Pulling/Repair Help)
+
+User sends SOS request → nearby vendors get notified
+
+Vendors can accept & assist
+
+🚀 End-to-End Project Plan (Django + React.js)
+📌 Phase 1: Project Setup
+
+Tools Required
+
+Python 3.12+
+
+Django + Django REST Framework
+
+PostgreSQL / MySQL
+
+Node.js + npm (for React frontend)
+
+Git, Docker (optional), Postman
+
+Repositories
+
+service-app-backend (Django + DRF)
+
+service-app-frontend (React.js or HTML/CSS)
+
+📌 Phase 2: Folder Structure
+
+Backend (Django + DRF)
+
 service-app-backend/
- ┣ src/
- ┃ ┣ config/        # DB, env config
- ┃ ┣ controllers/   # Request handlers
- ┃ ┣ models/        # DB Schemas
- ┃ ┣ routes/        # API endpoints
- ┃ ┣ middleware/    # Auth, logger
- ┃ ┗ utils/         # Helpers
- ┣ tests/
- ┣ index.js
- ┗ package.json
-```
+ ┣ service_app/        # Django project configs
+ ┣ users/              # Authentication, profiles
+ ┣ services/           # Service providers, categories
+ ┣ deals/              # Promotions
+ ┣ bookings/           # Appointments
+ ┣ sos/                # Car pulling/repair requests
+ ┣ barcodes/           # Vehicle QR/barcode
+ ┗ requirements.txt
 
-**Frontend (React.js)**
-```
+
+Frontend (React.js)
+
 service-app-frontend/
  ┣ src/
  ┃ ┣ components/   # Reusable UI
  ┃ ┣ pages/        # Home, Services, Deals
  ┃ ┣ services/     # API calls
  ┃ ┣ context/      # Auth, global state
- ┃ ┣ assets/       # Icons, images
  ┃ ┗ App.js
- ┣ public/
  ┗ package.json
-```
 
----
+📌 Phase 3: Database Design (PostgreSQL Example)
 
-### 📌 Phase 2: Database Design (MongoDB Example)
-**Collections**
-- Users: id, name, email, phone, google_auth_id, role, vehicles[]
-- Services: id, category, subCategory, name, description, location, contact, vendor_id
-- Barcodes: id, vehicle_id, user_id, barcode_number, status
-- Deals: id, user_id, title, description, picture_url, contact_number, status
-- Bookings: id, user_id, service_id, status (pending/confirmed/completed)
-- SOS Requests: id, user_id, vehicle_id, location, type (pull/repair), status
+Users
 
----
+id, name, email, phone, role(user/vendor/admin), google_auth_id, profile_image
 
-### 📌 Phase 3: API Design
-**Base URL:** `/api/v1/`
+Service Providers
 
-- **Auth**
-  - `POST /auth/google` → Login with Google
-  - `GET /auth/me` → Get user profile
+id, business_name, category_id, location, contact, description, id_proof, logo, status
 
-- **User**
-  - `PUT /user/:id` → Update profile
-  - `GET /user/:id` → Get user details
+Service Categories
 
-- **Service Provider**
-  - `POST /service/register` → Vendor registration
-  - `GET /service/categories` → List categories
-  - `GET /service/nearby` → Nearby services (location filter)
+id, name, description
 
-- **Barcode**
-  - `POST /barcode/order` → Order new vehicle barcode
-  - `GET /barcode/:number` → Scan barcode → fetch owner + contact
+Barcodes
 
-- **Deals**
-  - `POST /deals` → Create promotion
-  - `GET /deals` → Get all deals
+id, vehicle_id, user_id, barcode_number, status
 
-- **SOS / Car Pulling**
-  - `POST /sos/request` → Request car pulling/repair help
-  - `GET /sos/nearby` → Fetch nearby SOS requests
+Deals (Promotions)
 
----
+id, provider_id, title, description, picture_url, contact, active_from, active_to
 
-### 📌 Phase 4: Frontend Development
-**Pages**
-- Login/Signup (Google login)
-- Home Dashboard (Services & Categories)
-- Service Provider Registration (form)
-- Barcode Section (order + scan barcode)
-- Deals Section (promote services/items)
-- SOS/Car Pulling (request + helpers nearby)
+Bookings
 
-**Libraries**
-- Auth: Firebase Auth (Google login)
-- API: Axios
-- State: Context API / Redux
-- Maps: Google Maps API / Leaflet.js
-- Barcode: react-qr-scanner / jsbarcode
+id, user_id, service_id, status
 
----
+SOS Requests
 
-### 📌 Phase 5: Deployment
-- **Backend:** AWS EC2 / Render / Railway / Heroku (NGINX proxy)
-- **Database:** MongoDB Atlas / AWS RDS
-- **Frontend:** Vercel / Netlify / AWS S3 + CloudFront
-- **CI/CD:** GitHub Actions, ESLint, Jest
+id, user_id, vehicle_id, location, type (pull/repair), status
 
----
+📌 Phase 4: API Design (Django REST Framework)
 
-### 📌 Phase 6: Usage Flow
-1. User logs in with Google.
-2. Browse services by category or nearby search.
-3. Book service → stored in Bookings.
-4. Order barcode → linked with vehicle.
-5. Scan barcode → fetch owner & contact.
-6. Great Deals section → promotions visible.
-7. SOS request → notifies nearby helpers/vendors.
+Auth
 
----
+POST /api/auth/google/ – Google login
 
-### 📌 Phase 7: Roles & Responsibilities
-- **Backend Developer:** Setup APIs, DB models.
-- **Frontend Developer:** Build UI, integrate APIs.
-- **DevOps/Deployment:** Setup servers, CI/CD pipelines.
-- **Tester (QA):** Validate APIs, UI, and app flows.
+GET /api/auth/me/ – User profile
 
----
+Users
 
-## 📌 Tech Stack
-- **Frontend:** React.js, TailwindCSS (optional), Axios
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB / MySQL
-- **Auth:** Firebase Authentication (Google)
-- **Hosting:** AWS / Vercel / Netlify
+PUT /api/users/:id/ – Update profile
+
+GET /api/users/:id/ – User details
+
+Service Providers
+
+POST /api/providers/register/ – Register vendor
+
+GET /api/providers/nearby/ – Nearby vendors
+
+Barcodes
+
+POST /api/barcodes/order/ – Order barcode
+
+GET /api/barcodes/:id/scan/ – Scan barcode
+
+Deals
+
+POST /api/deals/ – Create promotion
+
+GET /api/deals/ – List all deals
+
+Bookings
+
+POST /api/bookings/ – Create booking
+
+GET /api/bookings/ – User bookings
+
+SOS Requests
+
+POST /api/sos/request/ – Send SOS help request
+
+GET /api/sos/nearby/ – Vendors fetch nearby requests
+
+📌 Phase 5: Frontend Development
+
+Pages
+
+Login (Google login integration)
+
+Home Dashboard (Categories, Nearby Services)
+
+Service Provider Registration
+
+Barcode (Order + Scan with QR reader)
+
+Great Deals (List + Create Promotion)
+
+SOS (Request Help + Nearby Requests)
+
+Libraries (React.js)
+
+Auth: Firebase Auth (Google login)
+
+API Calls: Axios
+
+State: Redux / Context API
+
+Maps: Google Maps API or Leaflet.js
+
+Barcode/QR: react-qr-scanner
+
+📌 Phase 6: Deployment Strategy
+
+Backend (Django API)
+
+Host on AWS EC2 / DigitalOcean
+
+DB on AWS RDS / PostgreSQL
+
+Dockerize app (Gunicorn + Nginx)
+
+Frontend (React.js)
+
+Build using npm run build
+
+Host on Vercel / Netlify / AWS S3 + CloudFront
+
+CI/CD
+
+GitHub Actions → auto deploy to server
+
+Unit Tests: Django (pytest) + React (Jest)
+
+📌 Phase 7: Usage Flow
+
+User logs in via Google → lands on Home.
+
+Browse categories or find nearby services.
+
+Book service OR request SOS help.
+
+Order barcode → attach to vehicle → others can scan & contact.
+
+Vendors register, wait for approval, then appear in Nearby Services.
+
+Vendors can also promote deals in "Great Deal" (paid/monthly).
