@@ -1,0 +1,195 @@
+/* =========================
+   🧱 Base Layout
+========================= */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 8%;
+  gap: 3rem;
+  background-color: #fff;
+  flex-wrap: wrap;
+  transition: all 0.4s ease;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================
+   📝 Text Section
+========================= */
+.hero-text {
+  flex: 1;
+  max-width: 500px;
+  min-width: 280px;
+}
+
+.hero-text h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: #333;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-text button {
+  background-color: #ff8c00;
+  color: #fff;
+  padding: 0.9rem 1.8rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 140px;
+}
+
+.hero-text button:hover {
+  background-color: #e67e00;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   🖼️ Image Grid (Right Side)
+========================= */
+.hero-images-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+  max-width: 680px;
+  width: 100%;
+}
+
+.image-item {
+  width: 100%;
+  max-width: 320px;
+  height: 180px; /* fixed height for better layout */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-item:hover {
+  transform: scale(1.03);
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   📱 RESPONSIVE DESIGN
+========================= */
+
+/* Tablet (up to 992px) */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 5%;
+    gap: 2rem;
+  }
+
+  .hero-text {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .hero-images-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 600px;
+  }
+
+  .image-item {
+    max-width: 280px;
+    height: 160px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .hero-text button {
+    font-size: 1rem;
+    padding: 0.8rem 1.4rem;
+  }
+}
+
+/* Mobile (up to 600px) */
+@media (max-width: 600px) {
+  .hero-container {
+    padding: 2.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .hero-images-grid {
+    grid-template-columns: 1fr; /* 1 column on small screen */
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .image-item {
+    max-width: 100%;
+    height: 200px; /* thoda zyada height for better visibility on mobile */
+  }
+
+  .hero-text {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-text button {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+/* Extra small devices (up to 400px) */
+@media (max-width: 400px) {
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .hero-text button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    min-width: 120px;
+  }
+
+  .image-item {
+    height: 160px;
+  }
+}

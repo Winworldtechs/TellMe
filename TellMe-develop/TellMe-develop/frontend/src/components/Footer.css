@@ -1,0 +1,148 @@
+/* Ye zaroori hai: html, body, root ko 100% height do */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* App ko flex container banayen vertical direction me */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* pura viewport height cover kare */
+}
+
+/* Content ko flex-grow do taaki footer niche rahe */
+.content {
+  flex-grow: 1; /* jitna bhi space bache, yeh fill kare */
+}
+
+/* Aapka footer styling */
+.main-footer {
+  background-color: #f8f8f8;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+}
+
+/* Footer ke andar container */
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Columns */
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Logo text — responsive size */
+.logo {
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2c2828;
+}
+
+/* Paragraph text responsive */
+.footer-left p {
+  font-size: clamp(13px, 1.8vw, 15px);
+  color: #463c3c;
+  line-height: 1.6;
+}
+
+/* Headings responsive */
+.footer-center h4,
+.footer-right h4 {
+  font-size: clamp(14px, 2vw, 18px);
+  margin-bottom: 12px;
+  color: #2c2b2b;
+}
+
+/* List items and links */
+.footer-center ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-center li {
+  margin-bottom: 8px;
+}
+
+.footer-center a,
+.footer-right a {
+  text-decoration: none;
+  font-size: clamp(13px, 1.8vw, 15px);
+  color: #1E1E1E;
+  transition: color 0.3s ease;
+}
+
+.footer-center a:hover,
+.footer-right a:hover {
+  color: #000;
+}
+
+/* Social icons */
+.social-icons a {
+  font-size: clamp(18px, 2.2vw, 22px);
+  margin-right: 12px;
+  color: #1E1E1E;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #000;
+}
+
+/* ✅ RESPONSIVENESS */
+
+/* Medium devices (tablets) */
+@media (max-width: 992px) {
+  .footer-container {
+    gap: 30px;
+    justify-content: space-around;
+  }
+
+  .main-footer {
+    padding: 35px 20px;
+  }
+}
+
+/* Small devices (mobiles) */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left, .footer-center, .footer-right {
+    min-width: 100%;
+  }
+
+  .footer-center h4,
+  .footer-right h4 {
+    margin-top: 20px;
+  }
+
+  .social-icons a {
+    margin: 0 8px;
+  }
+}
+
+/* Very small devices (under 480px) */
+@media (max-width: 480px) {
+  .main-footer {
+    padding: 30px 15px;
+  }
+
+  .footer-container {
+    gap: 20px;
+  }
+}

@@ -1,0 +1,159 @@
+.cart-page {
+  max-width: 900px;
+  margin: 200px auto;
+  font-family: 'Arial', sans-serif;
+  color: #222;
+}
+
+.cart-title {
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 100px;
+}
+
+.cart-content {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* Left side: cart items */
+.cart-items {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Each cart item container */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px 15px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.cart-item-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart-item img {
+  width: 55px;
+  height: 55px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-info strong {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.cart-item-info small {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Remove button */
+.remove-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+.remove-btn:hover {
+  color: #ff4d4f;
+}
+
+/* Right side: details */
+.cart-details {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Each detail block */
+.cart-detail-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-detail-block > div {
+  max-width: 70%;
+}
+
+.cart-detail-block strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #222;
+}
+
+.cart-detail-block p {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.3;
+}
+
+/* Edit button */
+.edit-btn {
+  background: #f0f0f0;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  color: #555;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+  background: #ddd;
+}
+
+/* Confirm booking button */
+.confirm-btn {
+  margin-top: auto;
+  background: #ff7a00;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-btn:hover {
+  background: #e06b00;
+}

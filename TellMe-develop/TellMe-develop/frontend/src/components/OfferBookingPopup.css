@@ -1,0 +1,85 @@
+.booking-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.booking-box {
+  width: 90%;
+  max-width: 450px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  animation: popup .28s ease;
+}
+
+@keyframes popup {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+}
+
+.slot-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.slot {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 14px;
+  background: #f5f5f5;
+}
+
+.slot.active {
+  background: #ff8c00;
+  border-color: #ff8c00;
+  color: #fff;
+}
+
+.booking-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.confirm {
+  background: #ff8c00;
+  color: white;
+  padding: 11px 16px;
+  border-radius: 6px;
+  border: none;
+}
+.confirm:hover {
+  background: #e07a00;
+}
+
+.cancel {
+  background: #dcdcdc;
+  padding: 11px 16px;
+  border-radius: 6px;
+  border: none;
+}

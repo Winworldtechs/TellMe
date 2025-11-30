@@ -1,0 +1,248 @@
+/* ===== Base Container ===== */
+.home-service-container {
+  font-family: "Poppins", sans-serif;
+  padding: 40px;
+  max-width: 1200px;
+ 
+  margin-top: 40px;   
+  background: #fafafa;
+}
+
+/* ===== Header (center — old list pages) ===== */
+.home-service-header {
+  text-align: left;
+  margin-bottom: 20px;
+  margin-left: 60px;
+}
+
+.home-service-header h2 {
+  font-size: 32px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* ===== HEADER (LEFT — Appliance detailed pages) ===== */
+.home-service-header-left {
+  text-align: left;
+  margin-bottom: 30px;
+  margin-left: 60px;
+}
+
+.home-service-header-left h2 {
+  font-size: 32px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* ===== Service List Grid ===== */
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
+  padding-left: 60px;
+}
+
+/* ===== Card ===== */
+.service-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* For single service box */
+.single-box {
+  width: 310px;
+}
+
+/* ===== Image ===== */
+.service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+/* ===== Details Section ===== */
+.service-details {
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.service-details h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+.service-details p.company {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0 10px;
+}
+
+/* ===== Rating & Location ===== */
+.rating,
+.location {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.rating {
+  color: #333;
+  font-weight: 500;
+}
+
+.rating .star {
+  color: #ffb400;
+  margin-right: 5px;
+}
+
+.location {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.location img {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  opacity: 0.8;
+}
+
+/* ===== Book Button ===== */
+.book-btn {
+  width: 100%;
+  background: #ff8c00;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 0 0 16px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.book-btn:hover {
+  background: #e67e00;
+}
+
+/* ===== Modal Overlay ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* ===== Modal Content ===== */
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.modal-content select,
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== Modal Button ===== */
+.checkout-btn {
+  background: #e67e00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  background: #cc6f00;
+}
+
+/* Close Btn */
+.close-btn {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid #888;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #eee;
+}
+
+/* Toast message */
+.toast-success {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+
+  /* Size lock */
+  width: auto !important;
+  max-width: 280px !important;
+  height: auto !important;
+
+  /* Visual */
+  background: #22c55e !important;
+  color: #fff !important;
+  padding: 12px 18px !important;
+  border-radius: 8px !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+
+  /* No fullscreen stretch */
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+  /* Always above everything */
+  z-index: 99999 !important;
+
+  /* Prevent parent style leaks */
+  flex: 0 0 auto !important;
+  box-sizing: border-box !important;
+}

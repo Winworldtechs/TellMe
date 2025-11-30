@@ -1,0 +1,11 @@
+.provider-form-page{display:flex;align-items:center;justify-content:center;padding:30px}
+.provider-card{width:720px;background:#fff;padding:22px;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.06);font-family:Poppins, sans-serif}
+.provider-card h2{margin-bottom:12px}
+.provider-card label{display:block;margin-top:10px;color:#333}
+.provider-card input,.provider-card textarea,.provider-card select{width:100%;padding:10px;border:1px solid #e6e6e6;border-radius:8px;margin-top:6px}
+.logo-row{display:flex;gap:12px;align-items:center}
+.logo-preview{width:86px;height:86px;object-fit:cover;border-radius:8px;border:1px solid #eee}
+.two-cols{display:flex;gap:12px}
+.days-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.day-chip{background:#f7f7f7;padding:6px 8px;border-radius:8px;display:flex;align-items:center;gap:6px}
+.provider-card button{background:#ff9800;color:white;border:0;padding:12px;border-radius:8px;margin-top:14px;width:100%;font-weight:600;cursor:pointer}

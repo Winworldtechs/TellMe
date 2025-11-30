@@ -1,0 +1,264 @@
+/* ===============================
+      CONTAINER
+=============================== */
+.healthcare-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 60px auto;
+  padding: 0 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.healthcare-title {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* ===============================
+      GRID
+=============================== */
+.doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* ===============================
+      CARD
+=============================== */
+.doctor-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+  overflow: hidden;
+  transition: 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.doctor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 18px rgba(0,0,0,0.20);
+}
+
+/* ===============================
+      IMAGE BOX
+=============================== */
+.img-box {
+  width: 100%;
+  height: 180px;
+  background: #f3f3f3;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Save Icon */
+.save-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.save-icon img {
+  width: 26px !important;
+  height: 26px !important;
+  object-fit: contain !important;
+  background: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* ===============================
+      DETAILS
+=============================== */
+.doctor-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 12px 16px 4px;
+  color: #222;
+}
+
+.doctor-card p {
+  font-size: 14px;
+  color: #444;
+  margin: 2px 16px 6px;
+}
+
+.rating-distance {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 16px 8px;
+  font-size: 14px;
+  color: #444;
+}
+
+.rating-distance img {
+  width: 15px;
+}
+
+/* ===============================
+      BOOK BUTTON
+=============================== */
+.book-btn {
+  width: calc(100% - 32px);
+  margin: 10px auto 18px;
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background: #e98900;
+}
+
+/* ===============================
+      POPUP MODAL
+=============================== */
+/* POPUP OVERLAY */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+/* POPUP BOX */
+.popup-box {
+  background: #fff;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+  padding: 50px 32px 40px;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  animation: popFade 0.25s ease;
+}
+
+/* Close Button Top Right */
+.close-popup {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  background: #ff9800;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title Top */
+.popup-box h3 {
+  margin-top: 0;
+  margin-bottom: 26px;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Inputs */
+.popup-box input,
+.popup-box select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 22px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+}
+
+.slot-note {
+  text-align: center;
+  color: #666;
+  margin-bottom: 22px;
+}
+
+/* Confirm Booking Button */
+.checkout-btn {
+  width: 100%;
+  padding: 14px;
+  background: #ff9800;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background: #e07f00;
+}
+
+/* Animation */
+@keyframes popFade {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+
+
+/* ===============================
+      SUCCESS TOAST
+=============================== */
+.toast-success {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4BB543;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  z-index: 9999;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  animation: fadeInOut 3s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(25px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(25px); }
+}
+
+/* ===============================
+      RESPONSIVE
+=============================== */
+@media (max-width: 768px) {
+  .healthcare-title {
+    font-size: 22px;
+  }
+}

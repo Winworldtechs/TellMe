@@ -1,0 +1,239 @@
+/* ================================================= */
+/* GLOBAL STYLES */
+/* ================================================= */
+
+.profile-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 15px;
+  background: #fff;
+}
+
+.profile-container h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* ================================================= */
+/* MAIN LAYOUT */
+/* ================================================= */
+
+.profile-main-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* ---------------- Sidebar ---------------- */
+
+.profile-sidebar {
+  width: 180px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  padding: 8px 0;
+}
+
+.profile-nav-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #555;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.profile-nav-item:hover {
+  background: #f7f7f7;
+}
+
+.profile-nav-item.active {
+  color: #ff8800;
+  font-weight: 600;
+  border-left-color: #ff8800;
+  background: #fff;
+}
+
+/* ✅ ICON IMAGE SUPPORT */
+.side-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: 0.25s ease;
+}
+
+/* ✅ ACTIVE ICON highlight */
+.profile-nav-item.active .side-icon {
+  filter: grayscale(0) brightness(1.2) saturate(3);
+}
+
+/* Logout Button */
+.logout-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: #e34545;
+  color: #fff;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.logout-btn:hover {
+  background: #c43333;
+}
+
+/* ---------------- Content Panel ---------------- */
+
+.profile-content-panel {
+  flex-grow: 1;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+}
+
+.profile-content-panel h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+/* ================================================= */
+/* PERSONAL DETAILS */
+/* ================================================= */
+
+.personal-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.detail-field {
+  background: #f3f3f3;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border: none;
+  outline: none;
+  width: 100%;
+
+  /* ✅ PASSWORD-LIKE HIDING FIX */
+  -webkit-text-security: none !important;
+  text-security: none !important;
+}
+
+.personal-details-view p {
+  font-size: 0.95rem;
+  margin: 6px 0;
+}
+
+.btn-edit,
+.btn-save,
+.btn-cancel {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: 0.2s;
+}
+
+.btn-edit {
+  background: #ff9800;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background: #e68900;
+}
+
+.btn-save {
+  background: #4caf50;
+  color: white;
+}
+
+.btn-save:hover {
+  background: #3b8f40;
+}
+
+.btn-cancel {
+  background: #ddd;
+  color: #222;
+}
+
+.btn-cancel:hover {
+  background: #c1c1c1;
+}
+
+/* ================================================= */
+/* SAVED TAB */
+/* ================================================= */
+
+.saved-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.saved-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+
+/* ================================================= */
+/* RESPONSIVE */
+/* ================================================= */
+
+@media (max-width: 768px) {
+  .profile-main-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .profile-sidebar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    box-shadow: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .profile-nav-item {
+    flex: 1 1 30%;
+    font-size: 0.85rem;
+    justify-content: center;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .profile-nav-item.active {
+    border-bottom-color: #ff8800;
+    border-left: none;
+  }
+
+  .profile-content-panel {
+    padding: 15px;
+  }
+
+  .personal-details-grid {
+    grid-template-columns: 1fr;
+  }
+}

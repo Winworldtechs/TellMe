@@ -1,0 +1,106 @@
+/* ========== DETAILS PAGE MAIN WRAPPER ========== */
+.provider-details-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 70px auto;
+  padding: 0 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ========== CARD ========== */
+.provider-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* ========== IMAGE ========== */
+.provider-img-box {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.provider-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========== DETAILS INSIDE CARD ========== */
+.provider-info {
+  padding: 20px;
+}
+
+.provider-info h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.provider-desc {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.provider-price {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.provider-rating {
+  color: #ffcc3d;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+/* ========== LOCATION ========== */
+.provider-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 14px;
+}
+
+.provider-location img {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========== BOOK NOW BUTTON ========== */
+.provider-book-btn {
+  width: 90%;
+  margin: 0 auto 22px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  transition: 0.3s;
+}
+
+.provider-book-btn:hover {
+  background-color: #e68900;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .provider-info h2 {
+    font-size: 18px;
+  }
+}

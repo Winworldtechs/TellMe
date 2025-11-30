@@ -1,0 +1,146 @@
+/* MAIN WRAPPER */
+.barcode-container {
+  max-width: 780px;
+  margin: 60px auto;
+  padding: 10px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* PAGE TITLE */
+.barcode-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* SECTION BOX */
+.form-section {
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 32px;
+}
+
+.form-section h3 {
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ROWS */
+.form-row {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full {
+  width: 100%;
+}
+
+/* LABELS */
+label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+/* INPUTS */
+input,
+select,
+textarea {
+  background: #f4f4f4;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 13px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background: #fff;
+  border: 1px solid #fc8b00;
+}
+
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+/* UPLOAD BOX */
+.upload-box {
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  padding: 35px 0;
+  text-align: center;
+}
+
+#imageUpload {
+  display: none;
+}
+
+.upload-label {
+  cursor: pointer;
+  text-align: center;
+  color: #666;
+}
+
+.upload-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+  background: #fc8b00;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+}
+
+.submit-btn:hover {
+  background: #e67c00;
+}
+
+/* SUCCESS POPUP */
+.success-popup {
+  background: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .barcode-container {
+    padding: 10px;
+    margin: 40px 15px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

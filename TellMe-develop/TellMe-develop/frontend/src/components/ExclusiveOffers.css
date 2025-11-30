@@ -1,0 +1,254 @@
+/* =========================================
+   🔥 Exclusive Offers Section
+========================================= */
+.exclusive-offers {
+    padding: 20px;
+    max-width: 1240px;
+    margin: auto;
+    font-family: "Poppins", sans-serif;
+}
+
+.exclusive-offers h2 {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+/* Container */
+.offers-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+/* Offer Card */
+.offer-card {
+    flex: 1 1 100%;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background-color: #fff;
+    min-height: 300px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    height: 330px; /* 🔥 overlay + image perfect ratio */
+}
+
+/* 🔥 IMAGE PERFECT FIT */
+.offer-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* No cut */
+    display: block;
+}
+
+/* 🔥 Same Overlay (no change) */
+.offer-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.4), transparent);
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.offer-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.offer-info p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.offer-info strong {
+    color: #ffd700;
+}
+
+/* Button */
+.offer-info button {
+    display: block;
+    width: 160px;
+    margin-top: 14px;
+    padding: 12px 18px;
+    background: #ff8c00;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.offer-info button:hover {
+    background: #e07a00;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+    .offer-card { flex: 1 1 calc(50% - 10px); }
+    .exclusive-offers h2 { font-size: 40px; }
+}
+
+@media (min-width: 1024px) {
+    .exclusive-offers { padding: 48px 20px; }
+    .exclusive-offers h2 { font-size: 48px; margin-bottom: 50px; }
+    .offer-card { flex: 1 1 calc(33.33% - 14px); }
+}
+
+/* =========================================
+   🔥 OFFER BOOKING POPUP (Home Service Style)
+========================================= */
+.booking-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.booking-box {
+  width: 90%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  animation: popup .25s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes popup {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.booking-box h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #222;
+  text-align: left;
+}
+
+/* Always maintain proper visibility */
+.booking-box * {
+  color: #222 !important;
+}
+
+/* Date */
+.booking-box label {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 12px 0 6px;
+  display: block;
+}
+
+.booking-box input[type="date"] {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 6px;
+}
+
+/* Slots Grid */
+.slot-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.slot {
+  padding: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s;
+  text-align: center;
+}
+
+.slot:hover {
+  background: #ffe2bd;
+  border-color: #ff9800;
+}
+
+.slot.active {
+  background: #ff9800 !important;
+  border-color: #ff9800 !important;
+  color: #fff !important;
+}
+
+/* Actions */
+.booking-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.confirm, .cancel {
+  flex: 1;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.confirm {
+  background-color: #ff9800;
+  color: white !important;
+}
+.confirm:hover {
+  background-color: #e07f00;
+}
+
+.cancel {
+  background-color: #dcdcdc;
+  color: #333 !important;
+}
+
+
+/* ===== SUCCESS BOOKING MESSAGE ===== */
+.toast-success {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #28A745;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  z-index: 99999;
+  animation: fadeInOut 2s ease forwards;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.20);
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -20px); }
+  10% { opacity: 1; transform: translate(-50%, 0); }
+  90% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, -20px); }
+}
+
+
+/* Mobile */
+@media (max-width: 480px) {
+  .slot-container { grid-template-columns: 1fr; }
+  .booking-actions { flex-direction: column; }
+}

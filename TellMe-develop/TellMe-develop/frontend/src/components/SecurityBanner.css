@@ -1,0 +1,118 @@
+.security-banner {
+    /* Mobile First Default: Content stacks vertically and is centered */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    
+    background-color: #111;
+    color: white;
+    padding: 30px 20px; /* Responsive padding */
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 1240px;
+    
+    /* FIX: Reduced large margin-top for visibility */
+    margin: 30px auto 20px auto; 
+    
+    /* Image Handling: JS sets the image, this CSS handles display */
+    background-size: cover;
+    background-position: center;
+    min-height: 350px; /* Minimum height for visibility */
+    transition: background-image 0.5s ease;
+    text-align: center; /* Center-aligns content on mobile */
+}
+
+/* Styles for loading/error/no-data states */
+.security-banner.loading, 
+.security-banner.error,
+.security-banner.no-data {
+    background-image: none !important; 
+    background-color: #333; 
+    min-height: 200px;
+}
+
+.banner-content {
+    flex: 1;
+    padding: 0; 
+    max-width: 90%; 
+    /* The banner-content itself is centered by the parent */
+}
+
+.banner-content h2 {
+    /* Mobile font size */
+    font-size: 36px; 
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: none; /* Removed restrictive max-width */
+    line-height: 1.5;
+}
+
+.banner-content button {
+    background-color: #ff7300;
+    color: white;
+    padding: 12px 30px; 
+    border: none;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.banner-content button:hover {
+    background-color: #e06600;
+}
+
+/* If you still need a separate image element (though background image is used in JS) */
+.banner-image {
+    display: none; /* Hide on mobile to prioritize text */
+}
+
+/* ------------------------------------------------------------------ */
+/* Media Queries for Tablet and Desktop */
+/* ------------------------------------------------------------------ */
+
+/* Tablet/Small Desktop View */
+@media (min-width: 768px) {
+    .security-banner {
+        /* Content side-by-side */
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        min-height: 400px;
+        padding: 50px;
+        text-align: left; /* Align text left on desktop */
+    }
+
+    .banner-content {
+        flex: 1.5; /* Give content more space */
+        padding-right: 50px; 
+        max-width: 60%; /* Limit text width */
+    }
+
+    .banner-content h2 {
+        font-size: 64px; 
+    }
+
+    .banner-content p {
+        font-size: 18px;
+        max-width: 500px; 
+    }
+    
+    .banner-image {
+        flex: 1;
+        text-align: right;
+        display: block;
+    }
+}
+
+/* Large Desktop View */
+@media (min-width: 1024px) {
+    .banner-content h2 {
+        font-size: 80px; /* Restore original large font size */
+    }
+}

@@ -1,0 +1,230 @@
+/* ====== General Layout ====== */
+.home-service-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 80px auto;
+  padding: 0 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+/*  Title left aligned */
+.home-service-container > h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+  text-align: left;
+  margin-bottom: 70px;
+}
+
+/* ====== Service List & Cards ====== */
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition: 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0;     /* ✅ ADD THIS */
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* ====== IMAGE BOX ====== */
+.img-box {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* save  BOOKMARK ICON */
+
+
+.save-icon {
+  position: absolute;
+  top: 12px;     
+  right: 12px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+/* --- Save Icon Image --- */
+.save-icon img {
+  width: 26px !important;   
+  height: 26px !important;
+  object-fit: contain !important;
+  background: none !important;
+  border-radius: 0 !important;
+  display: block;
+}
+
+/* ====== Card Details ====== */
+.service-details {
+  padding: 15px 18px;
+}
+
+.service-details h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.service-details .company {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* ====== Rating & Location ====== */
+.rating {
+  font-size: 15px;
+  color: #FFCA4E;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.location {
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.location img {
+  width: 16px;
+  height: 16px;
+}
+
+/* ====== Buttons ====== */
+.book-btn {
+  width: 100%;
+  margin: 10px 0 18px;   /* left–right margin हट गया */
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+.book-btn:hover {
+  background-color: #e98900;
+}
+
+/* ====== Modal ====== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  animation: popup 0.25s ease;
+}
+
+@keyframes popup {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-content h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #222;
+  text-align: left;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.checkout-btn {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  background-color: #e06f00;
+}
+
+/* ====== Toast ====== */
+.toast-success {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4BB543;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  z-index: 9999;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  animation: fadeInOut 3s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(25px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(25px); }
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .home-service-container > h2 {
+    font-size: 22px;
+  }
+}
